@@ -6,12 +6,12 @@
 typedef struct No{
     int chave; // chave para ordenação do vetor
     float valor; // valor do nó 
-} no;
+} no;   
 
 //função para criar um vetor randomico
-void createRandomVector(no *vector, int size) {
+void createRandomVector(no *vector, int size, int seed) {
     int i;
-    srand(22007263); // usa o tempo atual como semente para o gerador aleatório
+    srand(seed); // seed para geraçõa do vetor randomico
 
     for(i = 0; i < size; i++) 
     {
@@ -26,7 +26,7 @@ void imprimevetor(no *vetor, int tamanho){
     int i;
     for(i = 0; i < tamanho; i++)
     {
-        printf("---Chave: %d, Valor: %.2f---", vetor[i].chave, vetor[i].valor); // imprime a chave e o valor
+        printf("|Chave: %d, Valor: %.2f|", vetor[i].chave, vetor[i].valor); // imprime a chave e o valor
     }
     
 }
@@ -40,7 +40,7 @@ void troca(no *a, no *b){
 }
 
 //InsertionSort function lower to higher
-void insertionSort(no *vetor, int tamanho){
+double insertionSort(no *vetor, int tamanho){
 
     //parte para da biblioteca time.h para marcar o tempo de execução
     clock_t start, end;
@@ -49,7 +49,6 @@ void insertionSort(no *vetor, int tamanho){
     start = clock();
 
     int i, j;
-    no aux;
     for(i = 0; i < tamanho; i++)
     {
         for (j=i ; j >= 0 ; j--)
@@ -63,12 +62,19 @@ void insertionSort(no *vetor, int tamanho){
 
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("Tempo de execução: %f\n", cpu_time_used);
+    return cpu_time_used;
 }
 
 
 //BubleSort function lower to higher
-void bubleSort(no *vetor, int tamanho){
+double bubleSort(no *vetor, int tamanho){
+
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    clock_t start, end;
+    double cpu_time_used;
+
+    start = clock();
+
     int i, j;
     no aux;
     for(i = 0; i < tamanho -1; i++)
@@ -83,29 +89,98 @@ void bubleSort(no *vetor, int tamanho){
             }
         }
     }
+
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    return cpu_time_used;
 }
 
+//Shell Sort function lower to higher
+double shellsort(no *vetor , int tamanho){
+    int i , j , h;
+    no aux;
+
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    clock_t start, end;
+    double cpu_time_used;
+
+    start = clock();
+
+    for(h = 1; h < tamanho; h = 3*h+1);
+    while(h > 0)
+    {
+        h = (h-1)/3;
+        for(i = h; i < tamanho; i++)
+        {
+            aux = vetor[i];
+            j = i;
+            while(vetor[j-h].chave > aux.chave)
+            {
+                vetor[j] = vetor[j-h];
+                j = j-h;
+                if(j < h)
+                {
+                    break;
+                }
+            }
+            vetor[j] = aux;
+        }
+    }
+
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    return cpu_time_used;
+}
+
+
 int main(){
-    int size = 10; // tamanho do vetor
+    int size = 1e4; // tamanho do vetor
+    int seed = 0; // seed para geraçõa do vetor randomico
+    double time = 0; // variavel para armazenar o tempo de execução
     no* vector = malloc(size * sizeof(no));
 
-    printf("Vetor desordenado:\n");
+//-------------------------VetorDesordenado(CASO-1)--------------------------------------
+    seed = 22007263; // seed para geraçõa do vetor randomico
+    createRandomVector(vector, size, seed);
 
-    createRandomVector(vector, size);
+    //para imprimir o vetor desordenado descomente a linha abaixo
+    //printf("Vetor desordenado:\n"); imprimevetor(vector, size);
+//--------------------------------------------------------------------------------
 
-    imprimevetor(vector, size);
+//-------------------------VetorOrdenadoInsertSort-----------------------------------------
+    time = insertionSort(vector, size);
 
-    printf("\nVetor ordenado:\n");
+    //para imprimir o vetor ordenado pelo insertSort descomente a linha abaixo
+    //printf("\nVetor ordenadoinsetsort:\n"); imprimevetor(vector, size);
 
-    insertionSort(vector, size);
+    printf("\n\nTempo de execucao(insertsort): %f\n", time);
+//-----------------------------------------------------------------------------------------
 
-    imprimevetor(vector, size);
+//-------------------------VetorOrdenadoBubleSort-----------------------------------------
+    time = bubleSort(vector, size);
+
+    //para imprimir o vetor ordenado pelo bubleSort descomente a linha abaixo
+    //printf("\nVetor ordenado(bublesort):\n"); imprimevetor(vector, size);
+
+    printf("\n\nTempo de execucao(bulbesort): %f\n", time);
+//-----------------------------------------------------------------------------------------
+
+
+//-------------------------VetorOrdenadoShellSort-----------------------------------------
+    time = shellsort(vector, size);
+
+    //para imprimir o vetor ordenado pelo shellSort descomente a linha abaixo
+    //printf("\nVetor ordenado(shellsort):\n"); imprimevetor(vector, size);
+
+    printf("\n\nTempo de execucao(shellsort): %f\n", time);
+//-----------------------------------------------------------------------------------------
 
     free(vector);
 
-    // agora você pode usar o vetor preenchido aqui na função main
-
     return 0;
 }
+
+
+
 
 
