@@ -114,7 +114,7 @@ double shellsort(no *vetor , int tamanho){
         {
             aux = vetor[i];
             j = i;
-            while(vetor[j-h].chave > aux.chave)
+            while(vetor[j-h].chave < aux.chave)
             {
                 vetor[j] = vetor[j-h];
                 j = j-h;
@@ -131,6 +131,65 @@ double shellsort(no *vetor , int tamanho){
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     return cpu_time_used;
 }
+
+//MergeSort function lower to higher
+void merger(int *v , int *c, int i, int m , int f){
+    int z, iv = i, ic = m+1;
+    for(z = i; z <= f; z++)
+    {
+        c[z] = v[z];
+    }
+    z = i;
+    while (iv <= m && ic <= f)
+    {
+        if (c[iv] <= c[ic])
+        {
+            v[z] = c[iv++];
+        }
+        else
+        {
+            v[z] = c[ic++];
+        }
+    }
+    while (iv <= m)
+    {
+    v[z++] = c[iv++];
+    }
+    while (ic <= f)
+    {
+    v[z++] = c[ic++];
+    }
+}
+
+void sort (int *v, int *c, int i,int f){
+    if (i < f)
+    {
+        int m = (i+f)/2;
+        sort(v, c, i, m);
+        sort(v, c, m+1, f);
+        if (v[m] > v[m+1])
+        {
+            merger(v, c, i, m, f);
+        }
+    }
+}
+
+double mergesort (int *v , int n){
+
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    clock_t start = 0, end;
+    double cpu_time_used;
+
+    int *c = malloc(sizeof(int)*n);
+    sort (v, c, 0, n-1);
+    free(c);
+
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    return cpu_time_used;
+}
+
+
 
 
 int main(){
@@ -173,6 +232,15 @@ int main(){
     //printf("\nVetor ordenado(shellsort):\n"); imprimevetor(vector, size);
 
     printf("\n\nTempo de execucao(shellsort): %f\n", time);
+//-----------------------------------------------------------------------------------------
+
+//-----------------------MergeSort---------------------------------------------------------
+    time = mergesort(vector, size);
+
+    //para imprimir o vetor ordenado pelo mergeSort descomente a linha abaixo
+    //printf("\nVetor ordenado(mergesort):\n"); imprimevetor(vector, size);
+
+    printf("\n\nTempo de execucao(mergesort): %f\n", time);
 //-----------------------------------------------------------------------------------------
 
     free(vector);
