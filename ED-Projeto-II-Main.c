@@ -43,15 +43,15 @@ void troca(no *a, no *b){
 double insertionSort(no *vetor, int tamanho){
 
     //parte para da biblioteca time.h para marcar o tempo de execução
-    clock_t start = 0, end;
+    clock_t start, end;
     double cpu_time_used;
 
     start = clock();
 
-    int i = 0, j;
-    for(i = 0; i < tamanho; i++)
+    int i = 0, j = 0;
+    for(i = 1; i < tamanho ; i++)
     {
-        for (j=i ; j >= 0 ; j--)
+        for (j=i ; j > 0 ; j--)
         {
             if(vetor[j-1].chave < vetor[j].chave)
             {
@@ -62,6 +62,8 @@ double insertionSort(no *vetor, int tamanho){
 
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(insertsort): %f\n", cpu_time_used);
+    printf("tempo de inicio %ld\n", start);
     return cpu_time_used;
 }
 
@@ -70,16 +72,16 @@ double insertionSort(no *vetor, int tamanho){
 double bubleSort(no *vetor, int tamanho){
 
     //parte para da biblioteca time.h para marcar o tempo de execução
-    clock_t start = 0, end;
+    clock_t start, end;
     double cpu_time_used;
 
     start = clock();
 
-    int i = 0 , j;
+    int i = 0 , j = 0 ;
     no aux;
-    for(i = tamanho; i - 1 > 0; i--)
+    for(i = 0 ; i < tamanho - 1; i--)
     {
-        for (j = tamanho; j - 1 > 0 ; j--)
+        for (j = 1 ; j  < tamanho - i; j--)
         {
             if(vetor[j].chave > vetor[j-1].chave)
             {
@@ -97,7 +99,7 @@ double bubleSort(no *vetor, int tamanho){
 
 //Shell Sort function lower to higher
 double shellsort(no *vetor , int tamanho){
-    int i = 0  , j , h;
+    int i = 0  , j = 0 , h;
     no aux;
 
     //parte para da biblioteca time.h para marcar o tempo de execução
@@ -203,15 +205,16 @@ int main(){
     createRandomVector(vector, size, seed);
 
     //para imprimir o vetor desordenado descomente a linha abaixo
-    printf("Vetor desordenado:\n"); imprimevetor(vector, size);
+    //printf("Vetor desordenado:\n"); imprimevetor(vector, size);
 //--------------------------------------------------------------------------------
 
 //-------------------------VetorOrdenadoInsertSort-----------------------------------------
     time = insertionSort(vector, size);
 
     //para imprimir o vetor ordenado pelo insertSort descomente a linha abaixo
-    printf("\nVetor ordenadoinsetsort:\n"); imprimevetor(vector, size);
+    //printf("\nVetor ordenadoinsetsort:\n"); imprimevetor(vector, size);
 
+    printf("primeia posicao %d\n", vector[0].chave);
     printf("\n\nTempo de execucao(insertsort): %f\n", time);
 //-----------------------------------------------------------------------------------------
 
@@ -229,7 +232,7 @@ int main(){
     time = shellsort(vector, size);
 
     //para imprimir o vetor ordenado pelo shellSort descomente a linha abaixo
-    printf("\nVetor ordenado(shellsort):\n"); imprimevetor(vector, size);
+    //printf("\nVetor ordenado(shellsort):\n"); imprimevetor(vector, size);
 
     printf("\n\nTempo de execucao(shellsort): %f\n", time);
 //-----------------------------------------------------------------------------------------
