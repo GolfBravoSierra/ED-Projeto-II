@@ -2,6 +2,71 @@
 #include <stdio.h>
 #include <time.h>
 
+// estrutura do nó
+typedef struct No{
+    int chave; // chave para ordenação do vetor
+    float valor; // valor do nó 
+} no;   
+
+typedef struct {
+    int chave;
+    // Adicione outros campos necessários aqui
+} no;
+
+void merger(no *v , no *c, int i, int m , int f){
+    int z, iv = i, ic = m+1;
+    for(z = i; z <= f; z++)
+    {
+        c[z] = v[z];
+    }
+    z = i;
+    while (iv <= m && ic <= f)
+    {
+        if (c[iv].chave <= c[ic].chave)
+        {
+            v[z] = c[iv++];
+        }
+        else
+        {
+            v[z] = c[ic++];
+        }
+    }
+    while (iv <= m)
+    {
+        v[z++] = c[iv++];
+    }
+    while (ic <= f)
+    {
+        v[z++] = c[ic++];
+    }
+}
+
+void sort (no *v, no *c, int i,int f){
+    if (i < f)
+    {
+        int m = (i+f)/2;
+        sort(v, c, i, m);
+        sort(v, c, m+1, f);
+        if (v[m].chave > v[m+1].chave)
+        {
+            merger(v, c, i, m, f);
+        }
+    }
+}
+
+double mergesort (no *v , int n){
+    clock_t start = 0, end;
+    double cpu_time_used;
+
+    no *c = malloc(sizeof(no)*n);
+    sort (v, c, 0, n-1);
+    free(c);
+
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    return cpu_time_used;
+}
+
 int main() {
     int i;
     int size = 10; // tamanho do vetor
@@ -13,6 +78,8 @@ int main() {
         vector[i] = rand() + 100; // gera um número aleatório e armazena no vetor
         printf("%d\n", vector[i]); // imprime o número aleatório
     }
+
+    mergesort(vector, size);
 
     return 0;
 }
