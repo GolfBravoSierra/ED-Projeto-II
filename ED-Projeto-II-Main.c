@@ -1,3 +1,4 @@
+//------------------------------ParteDasBiblietecasEstruturasDeDados---------------------------------
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
@@ -30,8 +31,9 @@ void imprimevetor(no *vetor, int tamanho){
     }
     
 }
+//----------------------------------------------------------------
 
-//função troca 
+//função troca --------------------------------------------------------
 void troca(no *a, no *b){
     no aux;
     aux = *a;
@@ -254,45 +256,50 @@ double quicksort(no *v ,int LI,  int LS ){
     return cpu_time_used;
     
 }
+//----------------------------------------------------------------------------------
 
-//---------------------------------------------
+//---------------------MAIN-------------------
 int main(){
-    int size = 10; // tamanho do vetor
+
+    int size = 1e4; // tamanho do vetor
     int seed = 0; // seed para geraçõa do vetor randomico
-    
     no* vector = (no *)malloc(size * sizeof(no));
 
 //-------------------------VetorDesordenado(CASO-1)--------------------------------------
     seed = 22007263; // seed para geraçõa do vetor randomico
-    createRandomVector(vector, size, seed);
+    //createRandomVector(vector, size, seed);
     //para imprimir o vetor desordenado descomente a linha abaixo
     //printf("Vetor desordenado:\n"); imprimevetor(vector, size);
 //--------------------------------------------------------------------------------
 
 //-------------------------VetorOrdenadoInsertSort-----------------------------------------
+    createRandomVector(vector, size, seed);
     insertionSort(vector, size);
-
+    free(vector);
     //para imprimir o vetor ordenado pelo insertSort descomente a linha abaixo
     //printf("\nVetor ordenadoinsetsort:\n"); imprimevetor(vector, size);
 //-----------------------------------------------------------------------------------------
 
-//-------------------------VetorOrdenadoBubleSort-----------------------------------------  
+//-------------------------VetorOrdenadoBubleSort----------------------------------------- 
+    createRandomVector(vector, size, seed);
     bubleSort(vector, size);
-
+    free(vector);
     //para imprimir o vetor ordenado pelo bubleSort descomente a linha abaixo
     //printf("\nVetor ordenado(bublesort):\n"); imprimevetor(vector, size);
 //-----------------------------------------------------------------------------------------
 
-//-------------------------VetorOrdenadoShellSort-----------------------------------------  
-    shellsort(vector, size);
-
+//-------------------------VetorOrdenadoShellSort----------------------------------------- 
+    //createRandomVector(vector, size, seed);
+    //shellsort(vector, size);
+    //free(vector);
     //para imprimir o vetor ordenado pelo shellSort descomente a linha abaixo
     //printf("\nVetor ordenado(shellsort):\n"); imprimevetor(vector, size);
 //-----------------------------------------------------------------------------------------
 
 //-----------------------MergeSort---------------------------------------------------------
+    createRandomVector(vector, size, seed);
     mergesort(vector , size);
-    
+    free(vector);
     //para imprimir o vetor ordenado pelo mergeSort descomente a linha abaixo
     //printf("\nVetor ordenado(mergesort):\n"); imprimevetor(vector, size);
 //-----------------------------------------------------------------------------------------
