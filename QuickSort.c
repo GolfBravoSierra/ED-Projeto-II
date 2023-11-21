@@ -39,9 +39,9 @@ int particao(no *v, int LI, int LS){
     int pivo, aux;
     int e = LI, d = LS;
     pivo = v[LI].chave;
-    while(e < d)
+    while(e > d)
     {
-        while((v[e].chave >= pivo)&&(e < LS))
+        while((v[e].chave >= pivo)&&(e > LS))
         {
             e++;
         }

@@ -6,15 +6,15 @@
 // estrutura do nó
 typedef struct No{
     int chave; // chave para ordenação do vetor
-    float valor; // valor do nó 
-} no;   
+    float valor; // valor do nó
+} no;
 
 //função para criar um vetor randomico
 void createRandomVector(no *vector, int size, int seed) {
     int i;
     srand(seed); // seed para geraçõa do vetor randomico
 
-    for(i = 0; i < size; i++) 
+    for(i = 0; i < size; i++)
     {
         vector[i].chave = i; // gera um número aleatório acima de 100 e armazena na chave
         vector[i].valor = (float)(rand() + 100); // gera um número aleatório acima de 100 e armazena no valor
@@ -29,7 +29,7 @@ void imprimevetor(no *vetor, int tamanho){
     {
         printf("|Chave: %d, Valor: %.2f|", vetor[i].chave, vetor[i].valor); // imprime a chave e o valor
     }
-    
+
 }
 //----------------------------------------------------------------
 
@@ -52,8 +52,10 @@ void shellsort(no *vetor , int tamanho){
         for(i = h; i < tamanho; i++)
         {
             aux = vetor[i];
+            //print de teste
+            printf("aux: %d\n", aux.chave);
             j = i;
-            while(vetor[j-h].chave < aux.chave)
+            while(vetor[j-h].chave > aux.chave)
             {
                 vetor[j] = vetor[j-h];
                 j = h;
@@ -78,7 +80,7 @@ void shellsort(no *vetor , int tamanho){
 int main(){
     int size = 1e4; // tamanho do vetor
     int seed = 0; // seed para geraçõa do vetor randomico
-    
+
     no* vector = (no *)malloc(size * sizeof(no));
 
 //-------------------------VetorDesordenado(CASO-1)--------------------------------------
@@ -87,7 +89,7 @@ int main(){
     //para imprimir o vetor desordenado descomente a linha abaixo
     //printf("Vetor desordenado:\n"); imprimevetor(vector, size);
 //--------------------------------------------------------------------------------
-//-------------------------VetorOrdenadoShellSort----------------------------------------- 
+//-------------------------VetorOrdenadoShellSort-----------------------------------------
     shellsort(vector, size);
     //para imprimir o vetor ordenado pelo shellSort descomente a linha abaixo
     //printf("\nVetor ordenado(shellsort):\n"); imprimevetor(vector, size);

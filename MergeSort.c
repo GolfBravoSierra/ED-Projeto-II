@@ -92,8 +92,9 @@ void mergesort(no *v , int n){
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("\n\nTempo de execucao(mergesort): %f\n", cpu_time_used);
-    printf("primeia posicao %d\n", v[0].chave);
-    printf("ultima posicao %d\n", v[n-1].chave);
+    
+    printf("primeira chave: %d\n", v[0].chave);
+    printf("ultima chave: %d\n", v[n-1].chave);
 
 }
 //---------------------------------------------
@@ -101,22 +102,31 @@ void mergesort(no *v , int n){
 //---------------------MAIN-------------------
 int main(){
 
-    int size = 1e4; // tamanho do vetor
+    int size = 1e5; // tamanho do vetor
     int seed = 0; // seed para geraçõa do vetor randomico
     no* vector = (no *)malloc(size * sizeof(no));
 
 //-------------------------VetorDesordenado(CASO-1)--------------------------------------
-    seed = 22007263; // seed para geraçõa do vetor randomico
+    seed = 84644564; // seed para geraçõa do vetor randomico
     createRandomVector(vector, size, seed);
     //para imprimir o vetor desordenado descomente a linha abaixo
     //printf("Vetor desordenado:\n"); imprimevetor(vector, size);
 //--------------------------------------------------------------------------------
+
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    clock_t start = 0, end;
+    double cpu_time_used;
 
 //-----------------------MergeSort---------------------------------------------------------
     mergesort(vector , size);
     //para imprimir o vetor ordenado pelo mergeSort descomente a linha abaixo
     //printf("\nVetor ordenado(mergesort):\n"); imprimevetor(vector, size);
 //-----------------------------------------------------------------------------------------
+
+    //parte para da biblioteca time.h para marcar o tempo de execução e verificar a ordenação
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(mergesort): %f\n", cpu_time_used);
 
     free(vector);
 

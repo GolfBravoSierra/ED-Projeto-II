@@ -74,12 +74,12 @@ void insertionSort(no *vetor, int tamanho){
 //---------------------MAIN-------------------
 int main(){
 
-    int size = 1e4; // tamanho do vetor
+    int size = 1e5; // tamanho do vetor
     int seed = 0; // seed para geraçõa do vetor randomico
     no* vector = (no *)malloc(size * sizeof(no));
 
 //-------------------------VetorDesordenado(CASO-1)--------------------------------------
-    seed = 22007263; // seed para geraçõa do vetor randomico
+    seed = 84644564; // seed para geraçõa do vetor randomico
     createRandomVector(vector, size, seed);
     //para imprimir o vetor desordenado descomente a linha abaixo
     //printf("Vetor desordenado:\n"); imprimevetor(vector, size);
