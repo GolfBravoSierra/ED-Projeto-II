@@ -206,3 +206,93 @@ Seed8- 0.008000
 Seed9- 0.009000
 
 Seed10-0.008000
+
+**Tempo de execução BubleSort :**
+
+Seed1- 35.070000
+
+Seed2-34.794000
+
+Seed3-  35.469000
+
+Seed4- 35.153000
+
+Seed5-35.218000
+
+Seed6- 35.181000
+
+Seed7- 35.118000
+
+Seed8- 35.254000
+
+Seed9- 34.847000
+
+Seed10-34.783000
+
+### tamanho 5*1e5
+
+**Tempo de execução InsertSort:**
+
+Seed1- 790.634000
+
+Seed2- 652.816000
+
+Seed3- 610.843000
+
+Seed4-610.473000
+
+Seed5-616.034000
+
+Seed6- 610.762000
+
+Seed7-611.272000
+
+Seed8-613.162000
+
+Seed9-617.710000
+
+Seed10-623.248000
+
+**Tempo de execução MergeSort:**
+
+Seed1- 0.079000
+
+Seed2- 0.098000
+
+Seed3- 0.080000
+
+Seed4- 0.075000
+
+Seed5-0.062000
+
+Seed6- 0.077000
+
+Seed7- 0.078000
+
+Seed8- 0.072000
+
+Seed9- 0.072000
+
+Seed10-0.075000
+
+**Tempo de execução BubleSort :**
+
+Seed1- 34.410000
+
+Seed2-34.747000
+
+Seed3-  34.697000
+
+Seed4- 35.056000
+
+Seed5-34.575000
+
+Seed6- 34.821000
+
+Seed7- 34.686000
+
+Seed8- 34.868000
+
+Seed9- 35.025000
+
+Seed10-34.896000
