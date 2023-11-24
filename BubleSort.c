@@ -45,11 +45,6 @@ void troca(no *a, no *b){
 //BubleSort function lower to higher -------------------------------
 void bubleSort(no *vetor, int tamanho){
 
-    //parte para da biblioteca time.h para marcar o tempo de execução
-    clock_t start = 0, end = 0;
-    double cpu_time_used;
-
-    start = clock();
 
     int i, j;
     for(i = 0 ; i < tamanho - 1; i++)
@@ -63,9 +58,6 @@ void bubleSort(no *vetor, int tamanho){
         }
     }
 
-    end = clock();
-    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("\n\nTempo de execucao(bulbesort): %f\n", cpu_time_used);
     printf("primeia posicao %d\n", vetor[0].chave);
     printf("ultima posicao %d\n", vetor[tamanho-1].chave);
 }
@@ -74,22 +66,143 @@ void bubleSort(no *vetor, int tamanho){
 //---------------------MAIN-------------------
 int main(){
 
-    int size = 1e5; // tamanho do vetor
-    int seed = 84644564; // seed para geraçõa do vetor randomico
+    double cpu_time_used;
+    clock_t start = 0, end = 0;
+    int size = 1e4; // tamanho do vetor
     no* vector = (no *)malloc(size * sizeof(no));
 
+    system("cls");
 //-------------------------VetorDesordenado(CASO-1)--------------------------------------
-    
+    int seed = 22006737; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
     createRandomVector(vector, size, seed);
-    //para imprimir o vetor desordenado descomente a linha abaixo
-    //printf("Vetor desordenado:\n"); imprimevetor(vector, size);
+    start = clock();
+    bubleSort(vector,size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(BubleSort)seed 1: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+//-------------------------VetorDesordenado(CASO-2)--------------------------------------
+    seed = 22006737; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
+    createRandomVector(vector, size, seed);
+    start = clock();
+    bubleSort(vector,size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(BubleSort)seed 2: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+//-------------------------VetorDesordenado(CASO-3)--------------------------------------
+    seed = 11012004; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
+    createRandomVector(vector, size, seed);
+    start = clock();
+    bubleSort(vector,size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(BubleSort)seed 3: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+//-------------------------VetorDesordenado(CASO-4)--------------------------------------
+    seed = 20042004; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
+    createRandomVector(vector, size, seed);
+    start = clock();
+    bubleSort(vector,size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(BubleSort)seed 4: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+//-------------------------VetorDesordenado(CASO-5)--------------------------------------
+    seed = 17072003; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
+    createRandomVector(vector, size, seed);
+    start = clock();
+    bubleSort(vector,size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(BubleSort)seed 5: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+//-------------------------VetorDesordenado(CASO-6)--------------------------------------
+    seed = 65465478; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
+    createRandomVector(vector, size, seed);
+    start = clock();
+    bubleSort(vector,size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(BubleSort)seed 6: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+//-------------------------VetorDesordenado(CASO-7)--------------------------------------
+    seed = 47225896; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
+    createRandomVector(vector, size, seed);
+    start = clock();
+    bubleSort(vector,size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(BubleSort)seed 7: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+//-------------------------VetorDesordenado(CASO-8)--------------------------------------
+    seed = 35736436; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
+    createRandomVector(vector, size, seed);
+    start = clock();
+    bubleSort(vector,size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(BubleSort)seed 8: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+//-------------------------VetorDesordenado(CASO-9)--------------------------------------
+    seed = 32578587; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
+    createRandomVector(vector, size, seed);
+    start = clock();
+    bubleSort(vector,size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(BubleSort)seed 9: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+//-------------------------VetorDesordenado(CASO-10)--------------------------------------
+    seed = 84644564; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
+    createRandomVector(vector, size, seed);
+    start = clock();
+    bubleSort(vector,size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(BubleSort)seed 10: %f\n", cpu_time_used);
+    free(vector);
 //--------------------------------------------------------------------------------
 
-//-------------------------VetorOrdenadoBubleSort----------------------------------------- 
-    bubleSort(vector, size);
-    //para imprimir o vetor ordenado pelo bubleSort descomente a linha abaixo
-    //printf("\nVetor ordenado(bublesort):\n"); imprimevetor(vector, size);
-//-----------------------------------------------------------------------------------------
 
 
     free(vector);

@@ -102,8 +102,8 @@ void mergesort(no *v , int n){
 //---------------------MAIN-------------------
 int main(){
 
-    int size = 5*1e5; // tamanho do vetor
-    int seed = 84644564; // seed para geraçõa do vetor randomico
+    int size = 1e6; // tamanho do vetor
+    int seed = 32578587; // seed para geraçõa do vetor randomico
     no* vector = (no *)malloc(size * sizeof(no));
 
 //-------------------------VetorDesordenado(CASO-1)--------------------------------------
