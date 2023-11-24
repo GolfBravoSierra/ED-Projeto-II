@@ -90,6 +90,7 @@ void mergesort(no *v , int n){
 
 
     //parte da função merge sort
+    printf("testemerger1");
     no *c = malloc(sizeof(no)*n);
     sort (v, c, 0, n-1);
     free(c);
@@ -103,7 +104,7 @@ int main(){
 
     double cpu_time_used;
     clock_t start = 0, end = 0;
-    int size = 1e4; // tamanho do vetor
+    int size = 10; // tamanho do vetor
     no* vector = (no *)malloc(size * sizeof(no));
 
     system("cls");
@@ -126,6 +127,7 @@ int main(){
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     mergesort(vector, size);
@@ -139,6 +141,7 @@ int main(){
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     mergesort(vector, size);
@@ -152,6 +155,7 @@ int main(){
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     mergesort(vector, size);
@@ -165,6 +169,7 @@ int main(){
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     mergesort(vector, size);
@@ -178,6 +183,7 @@ int main(){
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     mergesort(vector, size);
@@ -191,6 +197,7 @@ int main(){
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     mergesort(vector, size);
@@ -204,6 +211,7 @@ int main(){
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     mergesort(vector, size);
@@ -217,6 +225,7 @@ int main(){
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     mergesort(vector, size);
@@ -230,6 +239,7 @@ int main(){
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     mergesort(vector, size);

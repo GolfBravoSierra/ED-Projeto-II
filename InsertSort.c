@@ -59,6 +59,9 @@ void insertionSort(no *vetor, int tamanho){
             }
         }
     }
+
+    printf("primeira chave: %d\n", vetor[0].chave);
+    printf("ultima chave: %d\n", vetor[tamanho-1].chave);
 }
 //--------------------------------------------
 
@@ -68,7 +71,7 @@ int main(){
 
     double cpu_time_used;
     clock_t start = 0, end = 0;
-    int size = 1e6; // tamanho do vetor
+    int size = 5*1e4; // tamanho do vetor
     no* vector = (no *)malloc(size * sizeof(no));
 
     system("cls");
