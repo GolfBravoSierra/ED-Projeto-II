@@ -1,3 +1,5 @@
 *.exe
 *.o
 git rm --cached *.o
+ShellSort.o
+InsertSort.o
