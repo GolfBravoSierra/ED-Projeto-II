@@ -68,7 +68,7 @@ int main(){
 
     double cpu_time_used;
     clock_t start = 0, end = 0;
-    int size = 1e4; // tamanho do vetor
+    int size = 1e6; // tamanho do vetor
     no* vector = (no *)malloc(size * sizeof(no));
 
     system("cls");
