@@ -16,7 +16,7 @@ void createRandomVector(no *vector, int size, int seed) {
 
     for(i = 0; i < size; i++) 
     {
-        vector[i].chave = i; // gera um número aleatório acima de 100 e armazena na chave
+        vector[i].chave = (int)(rand() + 100) ; // gera um número aleatório acima de 100 e armazena na chave
         vector[i].valor = (float)(rand() + 100); // gera um número aleatório acima de 100 e armazena no valor
         //printf("Chave: %d, Valor: %.2f\n", vector[i].chave, vector[i].valor); // imprime a chave e o valor
     }
@@ -69,11 +69,11 @@ int main(){
 
     double cpu_time_used;
     clock_t start = 0, end = 0;
-    int size = 5*1e4; // tamanho do vetor
+    int size =  1e6; // tamanho do vetor
     no* vector = (no *)malloc(size * sizeof(no));
 
     system("cls");
-    FILE *file = fopen("5x1e4-VReversodoShellSort.txt", "w");
+    FILE *file = fopen("1e6-VDesordenadodoShellSort.txt", "w");
     if (file == NULL) {
         printf("Erro ao abrir o arquivo!\n");
         return 1;

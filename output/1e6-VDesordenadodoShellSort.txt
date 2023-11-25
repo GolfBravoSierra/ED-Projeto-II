@@ -1,0 +1,33 @@
+propgrama iniciado
+parte shellsort
+
+
+Tempo de execucao(shellsort)seed 1: 0.567000
+
+
+Tempo de execucao(shellsort)seed 2: 0.592000
+
+
+Tempo de execucao(shellsort)seed 3: 0.549000
+
+
+Tempo de execucao(shellsort)seed 4: 0.525000
+
+
+Tempo de execucao(shellsort)seed 5: 0.538000
+
+
+Tempo de execucao(shellsort)seed 6: 0.536000
+
+
+Tempo de execucao(shellsort)seed 7: 0.549000
+
+
+Tempo de execucao(shellsort)seed 8: 0.522000
+
+
+Tempo de execucao(shellsort)seed 9: 0.559000
+
+
+Tempo de execucao(shellsort)seed 10: 0.512000
+fim do programa
