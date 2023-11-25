@@ -1,0 +1,33 @@
+propgrama iniciado
+parte mergesort
+
+
+Tempo de execucao(mergesort)seed 1: 0.082000
+
+
+Tempo de execucao(mergesort)seed 2: 0.074000
+
+
+Tempo de execucao(mergesort)seed 3: 0.075000
+
+
+Tempo de execucao(mergesort)seed 4: 0.077000
+
+
+Tempo de execucao(mergesort)seed 5: 0.076000
+
+
+Tempo de execucao(mergersort)seed 6: 0.069000
+
+
+Tempo de execucao(mergesort)seed 7: 0.084000
+
+
+Tempo de execucao(mergesort)seed 8: 0.067000
+
+
+Tempo de execucao(mergersort)seed 9: 0.075000
+
+
+Tempo de execucao(mergesort)seed 10: 0.064000
+fim do programa

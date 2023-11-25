@@ -1,4 +1,4 @@
-//------------------------------ParteDasBiblietecasEstruturasDeDados---------------------------------
+//------------------------ParteDasBilbiotecasEstruturasEtc----------------------
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
@@ -16,7 +16,7 @@ void createRandomVector(no *vector, int size, int seed) {
 
     for(i = 0; i < size; i++) 
     {
-        vector[i].chave = i; // gera um número aleatório acima de 100 e armazena na chave
+        vector[i].chave = (int)(rand() + 1); // gera um número aleatório acima de 100 e armazena na chave
         vector[i].valor = (float)(rand() + 100); // gera um número aleatório acima de 100 e armazena no valor
         //printf("Chave: %d, Valor: %.2f\n", vector[i].chave, vector[i].valor); // imprime a chave e o valor
     }
@@ -33,8 +33,15 @@ void imprimevetor(no *vetor, int tamanho){
 }
 //----------------------------------------------------------------
 
+//função troca --------------------------------------------------------
+void troca(no *a, no *b){
+    no aux;
+    aux = *a;
+    *a = *b;
+    *b = aux;
+}
+// ---------------------------------------------------------------------
 //MergeSort function lower to higher-----------
-
 
 void merge(no *v , no *c, int i, int m , int f){
     int z, iv = i, ic = m+1;
@@ -79,22 +86,12 @@ void sort(no *v, no *c, int i,int f){
 
 void mergesort(no *v , int n){
 
-    //parte para da biblioteca time.h para marcar o tempo de execução
-    clock_t start = 0, end;
-    double cpu_time_used;
 
     //parte da função merge sort
     no *c = malloc(sizeof(no)*n);
     sort (v, c, 0, n-1);
     free(c);
 
-    //parte para da biblioteca time.h para marcar o tempo de execução e verificar a ordenação
-    end = clock();
-    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("\n\nTempo de execucao(mergesort): %f\n", cpu_time_used);
-    
-    printf("primeira chave: %d\n", v[0].chave);
-    printf("ultima chave: %d\n", v[n-1].chave);
 
 }
 //---------------------------------------------
@@ -102,30 +99,163 @@ void mergesort(no *v , int n){
 //---------------------MAIN-------------------
 int main(){
 
-    int size = 1e6; // tamanho do vetor
-    int seed = 32578587; // seed para geraçõa do vetor randomico
+    double cpu_time_used;
+    clock_t start = 0, end = 0;
+    int size = 5*1e5; // tamanho do vetor
     no* vector = (no *)malloc(size * sizeof(no));
 
+    system("cls");
+    FILE *file = fopen("5x1e5-VDesosrdenadoMergeSort.txt", "w");
+    if (file == NULL) {
+        printf("Erro ao abrir o arquivo!\n");
+        return 1;
+    }
+    printf("propgrama iniciado\n");
+
+       printf("parte mergesort\n");
 //-------------------------VetorDesordenado(CASO-1)--------------------------------------
-    createRandomVector(vector, size, seed);
-    //para imprimir o vetor desordenado descomente a linha abaixo
-    //printf("Vetor desordenado:\n"); imprimevetor(vector, size);
-//--------------------------------------------------------------------------------
-
+     int seed = 22007263; // seed para geraçõa do vetor randomico
     //parte para da biblioteca time.h para marcar o tempo de execução
-    clock_t start = 0, end;
-    double cpu_time_used;
-
-//-----------------------MergeSort---------------------------------------------------------
+    start = 0; 
+    end = 0;
+    vector = (no *)malloc(size * sizeof(no));
+    createRandomVector(vector, size, seed);
+    start = clock();
     mergesort(vector , size);
-    //para imprimir o vetor ordenado pelo mergeSort descomente a linha abaixo
-    //printf("\nVetor ordenado(mergesort):\n"); imprimevetor(vector, size);
-//-----------------------------------------------------------------------------------------
-
-    //parte para da biblioteca time.h para marcar o tempo de execução e verificar a ordenação
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("\n\nTempo de execucao(mergesort): %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(mergesort)seed 1: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+//-------------------------VetorDesordenado(CASO-2)--------------------------------------
+    seed = 22006737; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
+    vector = (no *)malloc(size * sizeof(no));
+    createRandomVector(vector, size, seed);
+    start = clock();
+    mergesort(vector, size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(mergesort)seed 2: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+//-------------------------VetorDesordenado(CASO-3)--------------------------------------
+    seed = 11012004; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
+    vector = (no *)malloc(size * sizeof(no));
+    createRandomVector(vector, size, seed);
+    start = clock();
+    mergesort(vector, size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(mergesort)seed 3: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+//-------------------------VetorDesordenado(CASO-4)--------------------------------------
+    seed = 20042004; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
+    vector = (no *)malloc(size * sizeof(no));
+    createRandomVector(vector, size, seed);
+    start = clock();
+    mergesort(vector, size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(mergesort)seed 4: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+//-------------------------VetorDesordenado(CASO-5)--------------------------------------
+    seed = 17072003; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
+    vector = (no *)malloc(size * sizeof(no));
+    createRandomVector(vector, size, seed);
+    start = clock();
+    mergesort(vector, size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(mergesort)seed 5: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+//-------------------------VetorDesordenado(CASO-6)--------------------------------------
+    seed = 65465478; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
+    vector = (no *)malloc(size * sizeof(no));
+    createRandomVector(vector, size, seed);
+    start = clock();
+    mergesort(vector, size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(mergersort)seed 6: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+//-------------------------VetorDesordenado(CASO-7)--------------------------------------
+    seed = 47225896; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
+    vector = (no *)malloc(size * sizeof(no));
+    createRandomVector(vector, size, seed);
+    start = clock();
+    mergesort(vector, size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(mergesort)seed 7: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+//-------------------------VetorDesordenado(CASO-8)--------------------------------------
+    seed = 35736436; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
+    vector = (no *)malloc(size * sizeof(no));
+    createRandomVector(vector, size, seed);
+    start = clock();
+    mergesort(vector, size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(mergesort)seed 8: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+//-------------------------VetorDesordenado(CASO-9)--------------------------------------
+    seed = 32578587; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
+    vector = (no *)malloc(size * sizeof(no));
+    createRandomVector(vector, size, seed);
+    start = clock();
+    mergesort(vector, size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(mergersort)seed 9: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+//-------------------------VetorDesordenado(CASO-10)--------------------------------------
+    seed = 84644564; // seed para geraçõa do vetor randomico
+    //parte para da biblioteca time.h para marcar o tempo de execução
+    start = 0; 
+    end = 0;
+    vector = (no *)malloc(size * sizeof(no));
+    createRandomVector(vector, size, seed);
+    start = clock();
+    mergesort(vector, size);
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\n\nTempo de execucao(mergesort)seed 10: %f\n", cpu_time_used);
+    free(vector);
+//--------------------------------------------------------------------------------
+    printf("fim do programa\n");
+fclose(stdout);
+
 
     free(vector);
 

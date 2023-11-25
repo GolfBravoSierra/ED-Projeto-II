@@ -1,4 +1,4 @@
-//------------------------------ParteDasBiblietecasEstruturasDeDados---------------------------------
+//------------------------ParteDasBilbiotecasEstruturasEtc----------------------
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
@@ -16,7 +16,7 @@ void createRandomVector(no *vector, int size, int seed) {
 
     for(i = 0; i < size; i++) 
     {
-        vector[i].chave = i; // gera um número aleatório acima de 100 e armazena na chave
+        vector[i].chave = (int)(rand() + 1); // gera um número aleatório acima de 100 e armazena na chave
         vector[i].valor = (float)(rand() + 100); // gera um número aleatório acima de 100 e armazena no valor
         //printf("Chave: %d, Valor: %.2f\n", vector[i].chave, vector[i].valor); // imprime a chave e o valor
     }
@@ -58,25 +58,40 @@ void bubleSort(no *vetor, int tamanho){
         }
     }
 
-    printf("primeia posicao %d\n", vetor[0].chave);
-    printf("ultima posicao %d\n", vetor[tamanho-1].chave);
 }
 //------------------------------------------------------------------
+
+
+
+
 
 //---------------------MAIN-------------------
 int main(){
 
     double cpu_time_used;
     clock_t start = 0, end = 0;
-    int size = 1e4; // tamanho do vetor
+    int size = 5*1e5; // tamanho do vetor
     no* vector = (no *)malloc(size * sizeof(no));
 
     system("cls");
+    FILE *file = fopen("5x1e5-VdesordenadoBublrSort.txt", "w");
+    if (file == NULL) {
+        printf("Erro ao abrir o arquivo!\n");
+        return 1;
+    }
+    printf("propgrama iniciado\n");
+
+
+
+
+
+       printf("parte buble sort\n");
 //-------------------------VetorDesordenado(CASO-1)--------------------------------------
-    int seed = 22006737; // seed para geraçõa do vetor randomico
+     int seed = 22007263; // seed para geraçõa do vetor randomico
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     bubleSort(vector,size);
@@ -90,6 +105,7 @@ int main(){
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     bubleSort(vector,size);
@@ -103,6 +119,7 @@ int main(){
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     bubleSort(vector,size);
@@ -116,6 +133,7 @@ int main(){
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     bubleSort(vector,size);
@@ -129,6 +147,7 @@ int main(){
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     bubleSort(vector,size);
@@ -142,6 +161,7 @@ int main(){
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     bubleSort(vector,size);
@@ -155,6 +175,7 @@ int main(){
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     bubleSort(vector,size);
@@ -168,6 +189,7 @@ int main(){
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     bubleSort(vector,size);
@@ -181,6 +203,7 @@ int main(){
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     bubleSort(vector,size);
@@ -194,6 +217,7 @@ int main(){
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
+    vector = (no *)malloc(size * sizeof(no));
     createRandomVector(vector, size, seed);
     start = clock();
     bubleSort(vector,size);
@@ -202,7 +226,8 @@ int main(){
     printf("\n\nTempo de execucao(BubleSort)seed 10: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
-
+    printf("fim do programa\n");
+fclose(stdout);
 
 
     free(vector);

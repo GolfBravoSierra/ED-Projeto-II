@@ -1,0 +1,33 @@
+propgrama iniciado
+parte buble sort
+
+
+Tempo de execucao(BubleSort)seed 1: 59.161000
+
+
+Tempo de execucao(BubleSort)seed 2: 59.127000
+
+
+Tempo de execucao(BubleSort)seed 3: 59.003000
+
+
+Tempo de execucao(BubleSort)seed 4: 59.403000
+
+
+Tempo de execucao(BubleSort)seed 5: 59.419000
+
+
+Tempo de execucao(BubleSort)seed 6: 59.174000
+
+
+Tempo de execucao(BubleSort)seed 7: 59.030000
+
+
+Tempo de execucao(BubleSort)seed 8: 59.071000
+
+
+Tempo de execucao(BubleSort)seed 9: 59.071000
+
+
+Tempo de execucao(BubleSort)seed 10: 59.159000
+fim do programa

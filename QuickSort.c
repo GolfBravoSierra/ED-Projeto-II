@@ -16,7 +16,7 @@ void createRandomVector(no *vector, int size, int seed) {
 
     for(i = 0; i < size; i++) 
     {
-        vector[i].chave = i; // gera um número aleatório acima de 100 e armazena na chave
+        vector[i].chave = size - i; // gera um número aleatório acima de 100 e armazena na chave
         vector[i].valor = (float)(rand() + 100); // gera um número aleatório acima de 100 e armazena no valor
         //printf("Chave: %d, Valor: %.2f\n", vector[i].chave, vector[i].valor); // imprime a chave e o valor
     }
@@ -27,7 +27,7 @@ void imprimevetor(no *vetor, int tamanho){
     int i;
     for(i = 0; i < tamanho; i++)
     {
-        printf("|Chave: %d, Valor: %.2f|", vetor[i].chave, vetor[i].valor); // imprime a chave e o valor
+        printf("|Chave: %d|", vetor[i].chave); // imprime a chave e o valor
     }
     
 }
@@ -36,37 +36,35 @@ void imprimevetor(no *vetor, int tamanho){
 //QuickSort function lower to higher-----------
 
 int particao(no *v, int LI, int LS){
-    int pivo, aux;
-    int e = LI, d = LS;
-    pivo = v[LI].chave;
-    while(e > d)
+    no aux;
+    int e = LI; 
+    int d = LS;
+    no pivo = v[LS];
+    while(e < d)
     {
-        while((v[e].chave >= pivo)&&(e > LS))
+        while((v[e].chave >= pivo.chave)&&(e < LS))
         {
             e++;
         }
-        while((v[d].chave > pivo)&&(d > LI))
+        while((v[d].chave < pivo.chave)&&(d > LI))
         {
             d--;
         }
         if(e < d)
         {
-            aux = v[e].chave;
-            v[e].chave = v[d].chave;
-            v[d].chave = aux;
+            aux = v[e];
+            v[e] = v[d];
+            v[d] = aux;
         }
     }
-    aux = v[LI].chave;
-    v[LI].chave = v[d].chave;
-    v[d].chave = aux;
+    aux = v[LS];
+    v[LS]= v[d];
+    v[d]= aux;
     return d;
 }
 
-double quicksort(no *v ,int LI,  int LS ){
+void quicksort(no *v ,int LI,  int LS ){
 
-    // patente para da biblioteca time.h para marcar o tempo de execução
-    clock_t start = 0, end;
-    double cpu_time_used;
 
     if(LI<LS)
     {
@@ -75,13 +73,6 @@ double quicksort(no *v ,int LI,  int LS ){
         quicksort(v,LI,p-1);
         quicksort(v,p+1,LS);
     }
-
-    //parte para da biblioteca time.h para marcar o tempo de execução e verificar a ordenação
-    end = clock();
-    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("primeia posicao %d\n", v[0].chave);
-    printf("ultima posicao %d\n", v[LS-1].chave);
-    return cpu_time_used;
     
 }
 //----------------------------------------------------------------------------------
@@ -89,25 +80,23 @@ double quicksort(no *v ,int LI,  int LS ){
 //---------------------MAIN-------------------
 int main(){
 
-    int size = 1e4; // tamanho do vetor
+    int size = 10; // tamanho do vetor
     int seed = 0; // seed para geraçõa do vetor randomico
     no* vector = (no *)malloc(size * sizeof(no));
 
 //-------------------------VetorDesordenado(CASO-1)--------------------------------------
     seed = 22007263; // seed para geraçõa do vetor randomico
     createRandomVector(vector, size, seed);
+    printf("teste1");
     //para imprimir o vetor desordenado descomente a linha abaixo
-    //printf("Vetor desordenado:\n"); imprimevetor(vector, size);
+    printf("Vetor desordenado:\n"); imprimevetor(vector, size);
 //--------------------------------------------------------------------------------
 
 //-----------------------QuickSort---------------------------------------------------------
-    double tempo;
-    tempo = quicksort(vector , 0 , size);
-    printf("\n\nTempo de execucao(quicksort): %f\n", tempo);
-
-
+    quicksort(vector, 0 , size-1);
+    printf("teste0");
     //para imprimir o vetor ordenado pelo quickSort descomente a linha abaixo
-    //printf("\nVetor ordenado(quicksort):\n"); imprimevetor(vector, size);
+    printf("\nVetor ordenado(quicksort):\n"); imprimevetor(vector, size);
 //-----------------------------------------------------------------------------------------
 
     free(vector);

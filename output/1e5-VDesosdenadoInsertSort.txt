@@ -1,0 +1,33 @@
+propgrama iniciado
+parte insertion sort
+
+
+Tempo de execucao(insertsort)seed 1: 36.497000
+
+
+Tempo de execucao(insertsort)seed 2: 36.222000
+
+
+Tempo de execucao(insertsort)seed 3: 36.169000
+
+
+Tempo de execucao(insertsort)seed 4: 36.292000
+
+
+Tempo de execucao(insertsort)seed 5: 36.935000
+
+
+Tempo de execucao(insertsort)seed 6: 36.300000
+
+
+Tempo de execucao(insertsort)seed 7: 36.194000
+
+
+Tempo de execucao(insertsort)seed 8: 36.181000
+
+
+Tempo de execucao(insertsort)seed 9: 36.193000
+
+
+Tempo de execucao(insertsort)seed 10: 36.417000
+fim do programa

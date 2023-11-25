@@ -1,0 +1,120 @@
+
+
+Tempo de execucao(insertsort)seed 1: 0.379000
+
+
+Tempo de execucao(insertsort)seed 2: 0.384000
+
+
+Tempo de execucao(insertsort)seed 3: 0.355000
+
+
+Tempo de execucao(insertsort)seed 4: 0.368000
+
+
+Tempo de execucao(insertsort)seed 5: 0.373000
+
+
+Tempo de execucao(insertsort)seed 6: 0.380000
+
+
+Tempo de execucao(insertsort)seed 7: 0.361000
+
+
+Tempo de execucao(insertsort)seed 8: 0.388000
+
+
+Tempo de execucao(insertsort)seed 9: 0.369000
+
+
+Tempo de execucao(insertsort)seed 10: 0.374000
+
+
+Tempo de execucao(mergesort)seed 1: 0.000000
+
+
+Tempo de execucao(mergesort)seed 2: 0.000000
+
+
+Tempo de execucao(mergesort)seed 3: 0.008000
+
+
+Tempo de execucao(mergesort)seed 4: 0.000000
+
+
+Tempo de execucao(mergesort)seed 5: 0.000000
+
+
+Tempo de execucao(mergersort)seed 6: 0.000000
+
+
+Tempo de execucao(mergesort)seed 7: 0.000000
+
+
+Tempo de execucao(mergesort)seed 8: 0.008000
+
+
+Tempo de execucao(mergersort)seed 9: 0.000000
+
+
+Tempo de execucao(mergesort)seed 10: 0.000000
+
+
+Tempo de execucao(BubleSort)seed 1: 0.457000
+
+
+Tempo de execucao(BubleSort)seed 2: 0.454000
+
+
+Tempo de execucao(BubleSort)seed 3: 0.439000
+
+
+Tempo de execucao(BubleSort)seed 4: 0.454000
+
+
+Tempo de execucao(BubleSort)seed 5: 0.448000
+
+
+Tempo de execucao(BubleSort)seed 6: 0.446000
+
+
+Tempo de execucao(BubleSort)seed 7: 0.439000
+
+
+Tempo de execucao(BubleSort)seed 8: 0.439000
+
+
+Tempo de execucao(BubleSort)seed 9: 0.439000
+
+
+Tempo de execucao(BubleSort)seed 10: 0.462000
+
+
+Tempo de execucao(shellsort)seed 1: 0.003000
+
+
+Tempo de execucao(shellsort)seed 2: 0.006000
+
+
+Tempo de execucao(shellsort)seed 3: 0.000000
+
+
+Tempo de execucao(shellsort)seed 4: 0.000000
+
+
+Tempo de execucao(shellsort)seed 5: 0.000000
+
+
+Tempo de execucao(shellsort)seed 6: 0.000000
+
+
+Tempo de execucao(shellsort)seed 7: 0.015000
+
+
+Tempo de execucao(shellsort)seed 8: 0.000000
+
+
+Tempo de execucao(shellsort)seed 9: 0.000000
+
+
+Tempo de execucao(shellsort)seed 10: 0.000000
