@@ -1,0 +1,150 @@
+
+
+Tempo de execucao(insertsort)seed 1: 0.000000
+
+
+Tempo de execucao(insertsort)seed 2: 0.000000
+
+
+Tempo de execucao(insertsort)seed 3: 0.000000
+
+
+Tempo de execucao(insertsort)seed 4: 0.000000
+
+
+Tempo de execucao(insertsort)seed 5: 0.000000
+
+
+Tempo de execucao(insertsort)seed 6: 0.000000
+
+
+Tempo de execucao(insertsort)seed 7: 0.000000
+
+
+Tempo de execucao(insertsort)seed 8: 0.000000
+
+
+Tempo de execucao(insertsort)seed 9: 0.000000
+
+
+Tempo de execucao(insertsort)seed 10: 0.000000
+
+
+Tempo de execucao(mergesort)seed 1: 0.000000
+
+
+Tempo de execucao(mergesort)seed 2: 0.000000
+
+
+Tempo de execucao(mergesort)seed 3: 0.000000
+
+
+Tempo de execucao(mergesort)seed 4: 0.000000
+
+
+Tempo de execucao(mergesort)seed 5: 0.000000
+
+
+Tempo de execucao(mergersort)seed 6: 0.000000
+
+
+Tempo de execucao(mergesort)seed 7: 0.000000
+
+
+Tempo de execucao(mergesort)seed 8: 0.000000
+
+
+Tempo de execucao(mergersort)seed 9: 0.000000
+
+
+Tempo de execucao(mergesort)seed 10: 0.000000
+
+
+Tempo de execucao(BubleSort)seed 1: 0.000000
+
+
+Tempo de execucao(BubleSort)seed 2: 0.000000
+
+
+Tempo de execucao(BubleSort)seed 3: 0.000000
+
+
+Tempo de execucao(BubleSort)seed 4: 0.000000
+
+
+Tempo de execucao(BubleSort)seed 5: 0.000000
+
+
+Tempo de execucao(BubleSort)seed 6: 0.000000
+
+
+Tempo de execucao(BubleSort)seed 7: 0.000000
+
+
+Tempo de execucao(BubleSort)seed 8: 0.000000
+
+
+Tempo de execucao(BubleSort)seed 9: 0.000000
+
+
+Tempo de execucao(BubleSort)seed 10: 0.001000
+
+
+Tempo de execucao(shellsort)seed 1: 0.000000
+
+
+Tempo de execucao(shellsort)seed 2: 0.000000
+
+
+Tempo de execucao(shellsort)seed 3: 0.000000
+
+
+Tempo de execucao(shellsort)seed 4: 0.000000
+
+
+Tempo de execucao(shellsort)seed 5: 0.000000
+
+
+Tempo de execucao(shellsort)seed 6: 0.000000
+
+
+Tempo de execucao(shellsort)seed 7: 0.000000
+
+
+Tempo de execucao(shellsort)seed 8: 0.000000
+
+
+Tempo de execucao(shellsort)seed 9: 0.000000
+
+
+Tempo de execucao(shellsort)seed 10: 0.000000
+
+
+Tempo de execucao(QuickSort)seed 1: 0.000000
+
+
+Tempo de execucao(QuickSort)seed 2: 0.000000
+
+
+Tempo de execucao(QuickSort)seed 3: 0.000000
+
+
+Tempo de execucao(QuickSort)seed 4: 0.000000
+
+
+Tempo de execucao(QuickSort)seed 5: 0.000000
+
+
+Tempo de execucao(QuickSort)seed 6: 0.000000
+
+
+Tempo de execucao(QuickSort)seed 7: 0.000000
+
+
+Tempo de execucao(QuickSort)seed 8: 0.000000
+
+
+Tempo de execucao(QuickSort)seed 9: 0.000000
+
+
+Tempo de execucao(QuickSort)seed 10: 0.000000

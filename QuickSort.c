@@ -11,27 +11,21 @@ typedef struct No{
 
 //função para criar um vetor randomico
 void createRandomVector(no *vector, int size, int seed) {
+    int numero_aleatorio = rand();
+    numero_aleatorio = numero_aleatorio/1000;
     int i;
-    srand(seed); // seed para geraçõa do vetor randomico
+    srand(seed); // Semente
 
     for(i = 0; i < size; i++) 
     {
-        vector[i].chave =  i; // gera um número aleatório acima de 100 e armazena na chave
+
+        vector[i].chave = (int)(rand() + 1);
         vector[i].valor = (float)(rand() + 100); // gera um número aleatório acima de 100 e armazena no valor
-        //printf("Chave: %d, Valor: %.2f\n", vector[i].chave, vector[i].valor); // imprime a chave e o valor
+
     }
 }
 
-//função para imprimir o vetor
-void imprimevetor(no *vetor, int tamanho){
-    int i;
-    for(i = 0; i < tamanho; i++)
-    {
-        printf("|Chave: %d|", vetor[i].chave); // imprime a chave e o valor
-    }
-    
-}
-//----------------------------------------------------------------
+
 
 //QuickSort function lower to higher-----------
 
@@ -73,19 +67,14 @@ int main(){
 
     double cpu_time_used;
     clock_t start = 0, end = 0;
-    int size =  5*1e4; // tamanho do vetor
+    int size =  1e6; // tamanho do vetor
     no* vector = (no *)malloc(size * sizeof(no));
 
-    system("cls");
-    FILE *file = fopen("5x1e4-VReversoQUickSort.txt", "w");
-    if (file == NULL) {
-        printf("Erro ao abrir o arquivo!\n");
-        return 1;
-    }
+   system("cls");
     printf("propgrama iniciado\n");
            printf("parte QuickSort\n");
 //-------------------------VetorDesordenado(CASO-1)--------------------------------------
-     int seed = 22007263; // seed para geraçõa do vetor randomico
+    int seed = 22007263; // seed para geraçõa do vetor randomico
     //parte para da biblioteca time.h para marcar o tempo de execução
     start = 0; 
     end = 0;
@@ -97,6 +86,7 @@ int main(){
     printf("\n\nTempo de execucao(QuickSort)seed 1: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
+
 //-------------------------VetorDesordenado(CASO-2)--------------------------------------
     seed = 22006737; // seed para geraçõa do vetor randomico
     //parte para da biblioteca time.h para marcar o tempo de execução
@@ -108,7 +98,7 @@ int main(){
     quickSort(vector, 0 , size-1);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("\n\nTempo de execucao(QuickSort)seed 2: %f\n", cpu_time_used);
+     printf("\n\nTempo de execucao(QuickSort)seed 2: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-3)--------------------------------------
@@ -122,7 +112,7 @@ int main(){
     quickSort(vector, 0 , size-1);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("\n\nTempo de execucao(QuickSort)seed 3: %f\n", cpu_time_used);
+     printf("\n\nTempo de execucao(QuickSort)seed 3: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-4)--------------------------------------
@@ -136,7 +126,7 @@ int main(){
     quickSort(vector, 0 , size-1);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("\n\nTempo de execucao(QuickSort)seed 4: %f\n", cpu_time_used);
+     printf("\n\nTempo de execucao(QuickSort)seed 4: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-5)--------------------------------------
@@ -150,7 +140,7 @@ int main(){
     quickSort(vector, 0 , size-1);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("\n\nTempo de execucao(QuickSort)seed 5: %f\n", cpu_time_used);
+     printf("\n\nTempo de execucao(QuickSort)seed 5: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-6)--------------------------------------
@@ -206,7 +196,7 @@ int main(){
     quickSort(vector, 0 , size-1);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("\n\nTempo de execucao(QuickSort)seed 9: %f\n", cpu_time_used);
+     printf("\n\nTempo de execucao(QuickSort)seed 9: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-10)--------------------------------------
@@ -225,7 +215,7 @@ int main(){
 //--------------------------------------------------------------------------------
 
     printf("fim do programa\n");
-fclose(stdout);
+
 
 
     free(vector);

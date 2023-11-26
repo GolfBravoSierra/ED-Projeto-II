@@ -10,15 +10,19 @@ typedef struct No{
 } no;   
 
 //função para criar um vetor randomico
+//função para criar um vetor randomico
 void createRandomVector(no *vector, int size, int seed) {
+    int numero_aleatorio = rand();
+    numero_aleatorio = numero_aleatorio/1000;
     int i;
-    srand(seed); // seed para geraçõa do vetor randomico
+    srand(seed); // Semente
 
     for(i = 0; i < size; i++) 
     {
-        vector[i].chave = (int)(rand() + 1); // gera um número aleatório acima de 100 e armazena na chave
+
+        vector[i].chave = numero_aleatorio+i*i;
         vector[i].valor = (float)(rand() + 100); // gera um número aleatório acima de 100 e armazena no valor
-        //printf("Chave: %d, Valor: %.2f\n", vector[i].chave, vector[i].valor); // imprime a chave e o valor
+
     }
 }
 
@@ -67,7 +71,7 @@ int main(){
 
     double cpu_time_used;
     clock_t start = 0, end = 0;
-    int size = 5*1e5; // tamanho do vetor
+    int size = 1e4; // tamanho do vetor
     no* vector = (no *)malloc(size * sizeof(no));
 
     system("cls");

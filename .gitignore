@@ -3,3 +3,5 @@
 git rm --cached *.o
 ShellSort.o
 InsertSort.o
+quicksortsimples.c
+testedocodiogMatheus.c
