@@ -16,7 +16,9 @@ void createRandomVector(no *vector, int size, int seed) {
 
     for(i = 0; i < size; i++) 
     {
-        vector[i].chave = (int)(rand() + 1); // gera um número aleatório acima de 100 e armazena na chave
+        //para escolhero o metodo de gerar o vetor decomente a linha desejada
+        //vector[i].chave = i;
+        vector[i].chave = (int)(rand() + 1); // gera um número aleatório para a chave
         vector[i].valor = (float)(rand() + 100); // gera um número aleatório acima de 100 e armazena no valor
         //printf("Chave: %d, Valor: %.2f\n", vector[i].chave, vector[i].valor); // imprime a chave e o valor
     }
@@ -209,11 +211,7 @@ int main(){
     no* vector = (no *)malloc(size * sizeof(no));
 
     system("cls");
-    FILE *file = fopen("TesteDoMarcaTempo.txt", "w");
-    if (file == NULL) {
-        printf("Erro ao abrir o arquivo!\n");
-        return 1;
-    }
+
     printf("propgrama iniciado\n");
 
     printf("parte insertion sort\n");
@@ -228,7 +226,7 @@ int main(){
     insertionSort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(insertsort)seed 1: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(insertsort)seed 1: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-2)--------------------------------------
@@ -242,7 +240,7 @@ int main(){
     insertionSort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(insertsort)seed 2: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(insertsort)seed 2: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-3)--------------------------------------
@@ -256,7 +254,7 @@ int main(){
     insertionSort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(insertsort)seed 3: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(insertsort)seed 3: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-4)--------------------------------------
@@ -270,7 +268,7 @@ int main(){
     insertionSort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(insertsort)seed 4: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(insertsort)seed 4: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-5)--------------------------------------
@@ -284,7 +282,7 @@ int main(){
     insertionSort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(insertsort)seed 5: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(insertsort)seed 5: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-6)--------------------------------------
@@ -298,7 +296,7 @@ int main(){
     insertionSort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(insertsort)seed 6: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(insertsort)seed 6: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-7)--------------------------------------
@@ -312,7 +310,7 @@ int main(){
     insertionSort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(insertsort)seed 7: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(insertsort)seed 7: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-8)--------------------------------------
@@ -326,7 +324,7 @@ int main(){
     insertionSort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(insertsort)seed 8: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(insertsort)seed 8: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-9)--------------------------------------
@@ -340,7 +338,7 @@ int main(){
     insertionSort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(insertsort)seed 9: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(insertsort)seed 9: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-10)--------------------------------------
@@ -354,7 +352,7 @@ int main(){
     insertionSort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(insertsort)seed 10: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(insertsort)seed 10: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 
@@ -370,7 +368,7 @@ int main(){
     mergesort(vector , size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(mergesort)seed 1: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(mergesort)seed 1: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-2)--------------------------------------
@@ -384,7 +382,7 @@ int main(){
     mergesort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(mergesort)seed 2: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(mergesort)seed 2: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-3)--------------------------------------
@@ -398,7 +396,7 @@ int main(){
     mergesort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(mergesort)seed 3: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(mergesort)seed 3: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-4)--------------------------------------
@@ -412,7 +410,7 @@ int main(){
     mergesort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(mergesort)seed 4: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(mergesort)seed 4: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-5)--------------------------------------
@@ -426,7 +424,7 @@ int main(){
     mergesort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(mergesort)seed 5: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(mergesort)seed 5: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-6)--------------------------------------
@@ -440,7 +438,7 @@ int main(){
     mergesort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(mergersort)seed 6: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(mergersort)seed 6: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-7)--------------------------------------
@@ -454,7 +452,7 @@ int main(){
     mergesort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(mergesort)seed 7: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(mergesort)seed 7: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-8)--------------------------------------
@@ -468,7 +466,7 @@ int main(){
     mergesort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(mergesort)seed 8: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(mergesort)seed 8: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-9)--------------------------------------
@@ -482,7 +480,7 @@ int main(){
     mergesort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(mergersort)seed 9: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(mergersort)seed 9: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-10)--------------------------------------
@@ -496,7 +494,7 @@ int main(){
     mergesort(vector, size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(mergesort)seed 10: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(mergesort)seed 10: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
     
@@ -512,7 +510,7 @@ int main(){
     bubleSort(vector,size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(BubleSort)seed 1: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(BubleSort)seed 1: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-2)--------------------------------------
@@ -526,7 +524,7 @@ int main(){
     bubleSort(vector,size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(BubleSort)seed 2: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(BubleSort)seed 2: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-3)--------------------------------------
@@ -540,7 +538,7 @@ int main(){
     bubleSort(vector,size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(BubleSort)seed 3: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(BubleSort)seed 3: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-4)--------------------------------------
@@ -554,7 +552,7 @@ int main(){
     bubleSort(vector,size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(BubleSort)seed 4: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(BubleSort)seed 4: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-5)--------------------------------------
@@ -568,7 +566,7 @@ int main(){
     bubleSort(vector,size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(BubleSort)seed 5: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(BubleSort)seed 5: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-6)--------------------------------------
@@ -582,7 +580,7 @@ int main(){
     bubleSort(vector,size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(BubleSort)seed 6: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(BubleSort)seed 6: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-7)--------------------------------------
@@ -596,7 +594,7 @@ int main(){
     bubleSort(vector,size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(BubleSort)seed 7: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(BubleSort)seed 7: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-8)--------------------------------------
@@ -610,7 +608,7 @@ int main(){
     bubleSort(vector,size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(BubleSort)seed 8: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(BubleSort)seed 8: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-9)--------------------------------------
@@ -624,7 +622,7 @@ int main(){
     bubleSort(vector,size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(BubleSort)seed 9: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(BubleSort)seed 9: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-10)--------------------------------------
@@ -638,7 +636,7 @@ int main(){
     bubleSort(vector,size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(BubleSort)seed 10: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(BubleSort)seed 10: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
     
@@ -654,7 +652,7 @@ int main(){
     shellSort(vector , size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(shellsort)seed 1: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(shellsort)seed 1: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-2)--------------------------------------
@@ -668,7 +666,7 @@ int main(){
     shellSort(vector , size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(shellsort)seed 2: %f\n", cpu_time_used);
+   printf("\n\nTempo de execucao(shellsort)seed 2: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-3)--------------------------------------
@@ -682,7 +680,7 @@ int main(){
     shellSort(vector , size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(shellsort)seed 3: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(shellsort)seed 3: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-4)--------------------------------------
@@ -696,7 +694,7 @@ int main(){
     shellSort(vector , size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(shellsort)seed 4: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(shellsort)seed 4: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-5)--------------------------------------
@@ -710,7 +708,7 @@ int main(){
     shellSort(vector , size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(shellsort)seed 5: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(shellsort)seed 5: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-6)--------------------------------------
@@ -724,7 +722,7 @@ int main(){
     shellSort(vector , size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(shellsort)seed 6: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(shellsort)seed 6: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-7)--------------------------------------
@@ -738,7 +736,7 @@ int main(){
     shellSort(vector , size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(shellsort)seed 7: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(shellsort)seed 7: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-8)--------------------------------------
@@ -752,7 +750,7 @@ int main(){
     shellSort(vector , size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(shellsort)seed 8: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(shellsort)seed 8: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-9)--------------------------------------
@@ -766,7 +764,7 @@ int main(){
     shellSort(vector , size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(shellsort)seed 9: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(shellsort)seed 9: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-10)--------------------------------------
@@ -780,7 +778,7 @@ int main(){
     shellSort(vector , size);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(shellsort)seed 10: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(shellsort)seed 10: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 
@@ -796,7 +794,7 @@ int main(){
     quickSort(vector, 0 , size-1);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(QuickSort)seed 1: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(QuickSort)seed 1: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-2)--------------------------------------
@@ -810,7 +808,7 @@ int main(){
     quickSort(vector, 0 , size-1);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(QuickSort)seed 2: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(QuickSort)seed 2: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-3)--------------------------------------
@@ -824,7 +822,7 @@ int main(){
     quickSort(vector, 0 , size-1);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(QuickSort)seed 3: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(QuickSort)seed 3: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-4)--------------------------------------
@@ -838,7 +836,7 @@ int main(){
     quickSort(vector, 0 , size-1);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(QuickSort)seed 4: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(QuickSort)seed 4: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-5)--------------------------------------
@@ -852,7 +850,7 @@ int main(){
     quickSort(vector, 0 , size-1);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(QuickSort)seed 5: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(QuickSort)seed 5: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-6)--------------------------------------
@@ -866,7 +864,7 @@ int main(){
     quickSort(vector, 0 , size-1);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(QuickSort)seed 6: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(QuickSort)seed 6: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-7)--------------------------------------
@@ -880,7 +878,7 @@ int main(){
     quickSort(vector, 0 , size-1);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(QuickSort)seed 7: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(QuickSort)seed 7: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-8)--------------------------------------
@@ -894,7 +892,7 @@ int main(){
     quickSort(vector, 0 , size-1);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(QuickSort)seed 8: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(QuickSort)seed 8: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-9)--------------------------------------
@@ -908,7 +906,7 @@ int main(){
     quickSort(vector, 0 , size-1);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(QuickSort)seed 9: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(QuickSort)seed 9: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 //-------------------------VetorDesordenado(CASO-10)--------------------------------------
@@ -922,7 +920,7 @@ int main(){
     quickSort(vector, 0 , size-1);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    fprintf(file,"\n\nTempo de execucao(QuickSort)seed 10: %f\n", cpu_time_used);
+    printf("\n\nTempo de execucao(QuickSort)seed 10: %f\n", cpu_time_used);
     free(vector);
 //--------------------------------------------------------------------------------
 

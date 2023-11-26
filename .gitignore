@@ -5,3 +5,4 @@ ShellSort.o
 InsertSort.o
 quicksortsimples.c
 testedocodiogMatheus.c
+*.txt
